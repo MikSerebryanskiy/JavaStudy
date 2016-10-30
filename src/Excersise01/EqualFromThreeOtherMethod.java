@@ -23,8 +23,8 @@ public class EqualFromThreeOtherMethod {
             System.out.println(ave + " - среднее число.");
         }
         else {
-            int mae = maxAndEqual (x, y, z);
-            System.out.println(mae + " - наибольшее одинаковое число.");
+            String s = Equal (x, y, z);
+            System.out.println(s);
         }
     }
 
@@ -63,16 +63,18 @@ public class EqualFromThreeOtherMethod {
             return z;
         }
     }
-    private static int maxAndEqual (int x, int y, int z) {
-        if (x > y && z > y && x == z) {
-            return z;
+    private static String Equal (int x, int y, int z) {
+        if (x != y && z != y && x == z) {
+            return "Первое и третье числа - одинаковые.";
         }
-        else if (y > x && z > x && y == z) {
-            return y;
+        else if (y != x && z != x && y == z) {
+            return "Второе и третье числа - одинаковые.";
         }
-        else if (x > z && y > z && x == y) {
-            return x;
+        else if (x != z && y != z && x == y) {
+            return "Первое и второе числа - одинаковые.";
         }
-        return x;
+        else {
+            return "Все числа одинаковые.";
+        }
     }
 }
